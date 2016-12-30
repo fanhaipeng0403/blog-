@@ -7,7 +7,6 @@ categories: Linux
 ---
 
 Linux下tar命令exclude选项排除指定文件或目录
-Linux/Shell 2013-04-14 linux,打包,排除,tar
 在linux中可以用tar打包目录以方便传输or备份，我们先来看一个例子
 test 文件夹有如下文件
 [root@lee ~]# ll test

@@ -2,7 +2,7 @@
 title: 更改githubpage的博客域名
 date: 2016-12-26 22:30:56
 tags:
-categories: others
+categories: Others
 
 ---
 
