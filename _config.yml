@@ -5,7 +5,7 @@
 # Site
 title: Haipeng's Blog
 subtitle:
-description: 记下来才放心
+description: 博客
 author: Fanhaipeng
 language: zh-Hans
 timezone:
@@ -44,7 +44,7 @@ highlight:
   tab_replace:
 
 # Category & Tag
-default_category: uncategorized
+default_category: categorized
 category_map:
 tag_map:
 
@@ -57,14 +57,15 @@ time_format: HH:mm:ss
 
 # Pagination
 ## Set per_page to 0 to disable pagination
-per_page: 05
+per_page: 06
 pagination_dir: page
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 # theme: landscape
-theme: next
+# theme: next
+theme: spfk
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

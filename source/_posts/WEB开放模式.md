@@ -6,6 +6,8 @@ categories: Others
 
 ---
 
+推荐 https://zhuanlan.zhihu.com/p/22834622
+
 # 前言
 
 在想弄懂这些名词的过程中，看了很多文章，觉得在将MVC时，应该先注意到：
@@ -25,11 +27,31 @@ MVC在bs架构和cs架构上差别很大，即使同是bs，因为使用的技�
 ##  MVC和MVVC图解
 ![](https://camo.githubusercontent.com/2a09625439c430f360a770c80702f8df2c996156/687474703a2f2f7777332e73696e61696d672e636e2f6d773639302f34373465626633357477316476716e77786338746b6a2e6a7067?_=4285171)
 
+##  REST
+
+自从Roy Fielding博士在2000年他的博士论文中提出REST（Representational State Transfer）风格的软件架构模式后，REST就基本上迅速取代了复杂而笨重的SOAP，成为Web API的标准了。
+
+什么是Web API呢？
+
+如果我们想要获取某个电商网站的某个商品，输入http://localhost:3000/products/123，就可以看到id为123的商品页面，但这个结果是HTML页面，它同时混合包含了Product的数据和Product的展示两个部分。对于用户来说，阅读起来没有问题，但是，如果机器读取，就很难从HTML中解析出Product的数据。
+
+如果一个URL返回的不是HTML，而是机器能直接解析的数据，这个URL就可以看成是一个Web API。比如，读取http://localhost:3000/api/products/123，如果能直接返回Product的数据，那么机器就可以直接读取。
+REST就是一种设计API的模式。最常用的数据格式是JSON。由于JSON能直接被JavaScript读取，所以，以JSON格式编写的REST风格的API具有简单、易读、易用的特点。
+
+编写API有什么好处呢？由于API就是把Web App的功能全部封装了，所以，通过API操作数据，可以极大地把前端和后端的代码隔离，使得后端代码易于测试，前端代码编写更简单。
+
+此外，如果我们把前端页面看作是一种用于展示的客户端，那么API就是为客户端提供数据、操作数据的接口。这种设计可以获得极高的扩展性。例如，当用户需要在手机上购买商品时，只需要开发针对iOS和Android的两个客户端，通过客户端访问API，就可以完成通过浏览器页面提供的功能，而后端代码基本无需改动。
+
+当一个Web应用以API的形式对外提供功能时，整个应用的结构就扩展为：
+
+![](http://www.liaoxuefeng.com/files/attachments/001473591163887539f974f19544a10a1e89b8cf9f46048000/l)
+
 ##  REST精要
 
 REST
 
 a，出身：由Roy Thomas Fielding博士于2000年提出
+
 
 b，全称：Representational state Transfer,称为表象化状态转变，或者表述性状态转移
 
@@ -105,6 +127,67 @@ http://www.cnblogs.com/hoojo/p/longPolling_comet_jquery_iframe_ajax.html
 http://stackoverflow.com/questions/23172760/differences-between-webhook-and-websocket
 
 
+WebSocket
+
+WebSocket是HTML5新增的协议，它的目的是在浏览器和服务器之间建立一个不受限的双向通信的通道，比如说，服务器可以在任意时刻发送消息给浏览器。
+
+为什么传统的HTTP协议不能做到WebSocket实现的功能？这是因为HTTP协议是一个请求－响应协议，请求必须先由浏览器发给服务器，服务器才能响应这个请求，再把数据发送给浏览器。换句话说，浏览器不主动请求，服务器是没法主动发数据给浏览器的。
+
+这样一来，要在浏览器中搞一个实时聊天，在线炒股（不鼓励），或者在线多人游戏的话就没法实现了，只能借助Flash这些插件。
+
+也有人说，HTTP协议其实也能实现啊，比如用轮询或者Comet。轮询是指浏览器通过JavaScript启动一个定时器，然后以固定的间隔给服务器发请求，询问服务器有没有新消息。这个机制的缺点一是实时性不够，二是频繁的请求会给服务器带来极大的压力。
+
+Comet本质上也是轮询，但是在没有消息的情况下，服务器先拖一段时间，等到有消息了再回复。这个机制暂时地解决了实时性问题，但是它带来了新的问题：以多线程模式运行的服务器会让大部分线程大部分时间都处于挂起状态，极大地浪费服务器资源。另外，一个HTTP连接在长时间没有数据传输的情况下，链路上的任何一个网关都可能关闭这个连接，而网关是我们不可控的，这就要求Comet连接必须定期发一些ping数据表示连接“正常工作”。
+
+以上两种机制都治标不治本，所以，HTML5推出了WebSocket标准，让浏览器和服务器之间可以建立无限制的全双工通信，任何一方都可以主动发消息给对方。
+
+WebSocket协议
+
+WebSocket并不是全新的协议，而是利用了HTTP协议来建立连接。我们来看看WebSocket连接是如何创建的。
+
+首先，WebSocket连接必须由浏览器发起，因为请求协议是一个标准的HTTP请求，格式如下：
+
+GET ws://localhost:3000/ws/chat HTTP/1.1
+Host: localhost
+Upgrade: websocket
+Connection: Upgrade
+Origin: http://localhost:3000
+Sec-WebSocket-Key: client-random-string
+Sec-WebSocket-Version: 13
+该请求和普通的HTTP请求有几点不同：
+
+GET请求的地址不是类似/path/，而是以ws://开头的地址；
+请求头Upgrade: websocket和Connection: Upgrade表示这个连接将要被转换为WebSocket连接；
+Sec-WebSocket-Key是用于标识这个连接，并非用于加密数据；
+Sec-WebSocket-Version指定了WebSocket的协议版本。
+随后，服务器如果接受该请求，就会返回如下响应：
+
+HTTP/1.1 101 Switching Protocols
+Upgrade: websocket
+Connection: Upgrade
+Sec-WebSocket-Accept: server-random-string
+该响应代码101表示本次连接的HTTP协议即将被更改，更改后的协议就是Upgrade: websocket指定的WebSocket协议。
+
+版本号和子协议规定了双方能理解的数据格式，以及是否支持压缩等等。如果仅使用WebSocket的API，就不需要关心这些。
+
+现在，一个WebSocket连接就建立成功，浏览器和服务器就可以随时主动发送消息给对方。消息有两种，一种是文本，一种是二进制数据。通常，我们可以发送JSON格式的文本，这样，在浏览器处理起来就十分容易。
+
+为什么WebSocket连接可以实现全双工通信而HTTP连接不行呢？实际上HTTP协议是建立在TCP协议之上的，TCP协议本身就实现了全双工通信，但是HTTP协议的请求－应答机制限制了全双工通信。WebSocket连接建立以后，其实只是简单规定了一下：接下来，咱们通信就不使用HTTP协议了，直接互相发数据吧。
+
+安全的WebSocket连接机制和HTTPS类似。首先，浏览器用wss://xxx创建WebSocket连接时，会先通过HTTPS创建安全的连接，然后，该HTTPS连接升级为WebSocket连接，底层通信走的仍然是安全的SSL/TLS协议。
+
+浏览器
+很显然，要支持WebSocket通信，浏览器得支持这个协议，这样才能发出ws://xxx的请求。目前，支持WebSocket的主流浏览器如下：
+
+Chrome
+Firefox
+IE >= 10
+Sarafi >= 6
+Android >= 4.4
+iOS >= 8
+服务器
+
+由于WebSocket是一个协议，服务器具体怎么实现，取决于所用编程语言和框架本身。Node.js本身支持的协议包括TCP协议和HTTP协议，要支持WebSocket协议，需要对Node.js提供的HTTPServer做额外的开发。已经有若干基于Node.js的稳定可靠的WebSocket实现，我们直接用npm安装使用即可。
 
 目前要实现消息实时推送，有两种方法，一种是ajax轮询，由客户端不停地请求服务器端，查询有没有新消息，然后再由服务器返回结果；另外一种就是long poll,通过一次请求，询问服务器有没有新消息更新，如果没有新消息时，会保持长连接，就一直不返回Response给客户端。直到有消息才返回，返回完之后，客户端再次建立连接，周而复始。这两种都是单向链接，需要被动的请求服务器，而不是由服务器自动发给客户端。
 
@@ -112,42 +195,8 @@ http://stackoverflow.com/questions/23172760/differences-between-webhook-and-webs
 何为被动性呢，其实就是，服务端不能主动联系客户端，只能有客户端发起。
 简单地说就是，服务器是一个很懒的冰箱（这是个梗）（不会、不能主动发起连接），但是上司有命令，如果有客户来，不管多么累都要好好接待。
 
-你想去ATM机取钱，但是银行卡没钱了，你找你老爹求救，你把老爹说马上打给你
 
-# Ajax轮询
+webSocket文章:
 
-
-办法：因为你着急用啊，去ATM插卡，输入密码，看你的卡有没有钱，觉得你老爹的钱该到了，你又插卡输入密码，看有没有钱。
-
-
-ATM机相当于Nginx，处理你的请求
-你老爹相当于handler
-插卡，输入密码，每次都要重新验证，可以看成HTTP，而且是无记忆性的。
-
-
-缺点: 你要反复的插卡，需要很高的处理速度，才能不耽误你花钱
-
-
-# long poll
-
-办法：你的卡插着ATM机器，一直保持等着钱来
-
-采用阻塞模型，HTTP不断
-
-缺点: 营业厅ATM就那几台，不占这位置，浪费资源
-
-# webhook
-
-
-
-C/S=Client/Server
-B/S=Browser/Server
-一个基于客户端/服务器，一个基于浏览器/服务器
-
-# 开发模式非常好的文章
-
-http://blog.csdn.net/shaobingj126/article/details/49420145
-http://www.ruanyifeng.com/blog/2015/02/mvcmvp_mvvm.html
-http://www.cnblogs.com/winter-cn/p/4285171.html
-
-
+https://www.zhihu.com/question/20215561
+http://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/001472780997905c8f293615c5a42eab058b6dc29936a5c000
