@@ -1,11 +1,24 @@
 ---
 title: PyCharm
 date: 2017-01-08 20:48:01
-tags:
-categories: Others
+tags: IDE
 
 ---
------
+
+自定义模板分享
+
+/home/fanhaipeng/.PyCharm2016.3/config/settingsRepository/repository
+
+
+----
+
+ctrl alt + Q 补全try except finally
+
+----
+alt + 箭头
+切换窗口
+
+------
 
 关键字是斜体
 函数是正体
@@ -661,6 +674,8 @@ Ctrl + Alt + V提取属性
 Ctrl + Alt + F提取字段
 Ctrl + Alt + C提取常量
 Ctrl + Alt + P提取参数
+crtl + shit + R 全局替换
+
 ```
 
 
@@ -737,18 +752,21 @@ ctrl F 和 ctrl R
     在行号后一处单击鼠标，出现红点，再点击红点，消失。
     ctrl + F8 开关断点
     Ctrl + Shift + F8 查看断点
+
 # 调试断点
+
+    先选择文件
 
     甲壳虫，F9，或者在当前文件调试shift F9，会运行到第一个断点，并且显示上下文信息，然后按F8，跳过，继续运行
 
     调试也是一种运行，同样会调出控制台，只不过是有断点
 
-    按alt 4 关闭调试窗口
-    本人修改了F10等效于shift F9
+    Terminate命令终止本地调试,Disconnect命令终止远程调试。
 
-    alt + shift + F9/F10 是打开相应的配置
 
 # 运行
+
+    先选择文件
 
     改为F10， 按alt 4关闭 运行窗口
 

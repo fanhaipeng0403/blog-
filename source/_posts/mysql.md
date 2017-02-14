@@ -1,8 +1,7 @@
 ---
 title: Mysql
 date: 2017-01-21 11:16:11
-tags:
-categories: Mysql
+tags: Mysql
 
 ---
 
@@ -31,6 +30,8 @@ http://www.jb51.net/article/92516.htm
 2.apt-get isntall mysql-client
 
 3.sudo apt-get install libmysqlclient-dev
+
+4. sudo apt-get install libmysqld-dev (原来使用apt-get安装的MySQL是没有mysql_config这个文件的,不然安装pip install mysql-python会报错)
 
 检查安装上了没
 
@@ -315,9 +316,69 @@ SHOW STATUS	服务器状态指示器
 SHOW VARIABLES	服务器配置变量
 
 
+# mysqlworkbench
+
+下载
+http://jingyan.baidu.com/article/c843ea0b81786d77931e4a95.html
+教程
+http://jingyan.baidu.com/article/c843ea0b81786d77931e4a95.html
+
+MySQL workbench建表时，字段中有PK,NN,UQ,BIN,UN,ZF,AI几个基本字段类型标识。
+它们分别代表的意思是：
+PK：primary key 主键
+NN：not null 非空
+UQ：unique 唯一索引
+BIN：binary 二进制数据(比text更大)
+UN：unsigned 无符号（非负数）
+ZF：zero fill 填充0 例如字段内容是1 int(4), 则内容显示为0001
+AI：auto increment 自增
+
+其他GUI工具
+1）sqlyog 需要收费，当然有破解版，功能最全，好用
+2）navicat 有入门和收费两种，普通使用，入门就足够了。界面小清新。
+3）mysql workbench 官方出的GUI，还在不断改进中，基本功能都比较稳定，也是唯一支持多平台的一个GUI
 
 
+## Pycharm自带的数据插件
+
+pycharm 使用教程（六）进行简单的数据库管理
+发布于 2014-11-15 14:14:16 | 3499 次阅读 | 评论: 0 | 来源: 网友投递
+
+本文为大家讲解的是python的编辑器pycharm 下如何进行数据库管理的方法，感兴趣的同学参考下。
+
+功能简介：pycharm自带了一个简单的数据库插件，可以比较方便的进行简单的数据库操作。
+
+例如：
+
+1.创建，修改和删除数据表，字段，索引，主键，外键等。
+
+2.提供table editor来进行数据操作
+
+3.提供console来运行sql命令
+
+4.提供数据导出功能
+
+数据库创建方法
+
+1）在pycharm的右上角找到‘database'选项卡
+
+2）打开选项卡，按‘alt+insert'键，选择Data Source。
+
+3）为数据库连接取一个名称，选择一个JDBC driver files。如果没有这个文件，pycharm可以自动下载。
+
+4）选择一个JDBC driver class，mysql默认为：com.mysql.jdbc.Driver。oracle默认为：oracle.jdbc.OracleDriver
+
+5）编写Database URL,示例：
+      myql:jdbc:mysql://localhost:3306
+      jdbc:oracle:thin:@localhost:1521:server
+
+6）填写用户名和密码。
+
+7）点击Test Connection测试连接。
+
+8）根据提示信息修改错误，知道提示连接成功。
+
+9）OK
 
 参考
-
 http://wiki.jikexueyuan.com/project/mysql-21-minutes/overview.html

@@ -1,8 +1,8 @@
 ---
 title: Bash函数
 date: 2017-01-18 10:51:04
-tags:
-categories:
+tags:  Linux
+categories: Linux
 ---
 
 Bash函数简述

@@ -1,8 +1,7 @@
 ---
 title: Python编码问题
 date: 2017-01-07 10:23:09
-tags:
-categories: Python
+tags: Python
 
 ---
 

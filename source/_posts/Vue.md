@@ -1,8 +1,7 @@
 ---
 title: Vue
 date: 2017-01-25 22:44:25
-tags:
-categories:
+tags: 
 ---
 
 

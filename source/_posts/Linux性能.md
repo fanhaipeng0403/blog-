@@ -1,8 +1,7 @@
 ---
 title: Linux性能
 date: 2016-08-05 00:01:17
-tags:
-categories: Linux
+tags: Linux
 
 ---
 psdash 是一款查看 Linux 系统信息的 web 面板，和我们以前提到的另一款系统监控工具 Glances 一样，psDash 的系统信息的采集也是由 psutil 完成的。和 Glances 不同的是，psdash 没有提供 API，只带了一个基于 Flask 的 web 界面，默认每3秒刷新一次数据和界面。

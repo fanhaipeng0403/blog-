@@ -1,8 +1,7 @@
 ---
 title: Vim宏的使用
 date: 2017-01-02 00:09:32
-tags:
-categories: Vim
+tags: Vim
 
 ---
 

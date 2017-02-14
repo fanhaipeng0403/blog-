@@ -1,8 +1,7 @@
 ---
 title: Js
 date: 2017-01-11 09:20:53
-tags:
-categories:  JavaScript`
+tags: JavaScript
 
 ---
 

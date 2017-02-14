@@ -1,8 +1,7 @@
 ---
 title: zsh
 date: 2017-01-05 11:39:11
-tags:
-categories: zsh
+tags: zsh
 
 ---
 

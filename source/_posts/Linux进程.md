@@ -1,8 +1,7 @@
 ---
 title: Linux进程
 date: 2016-12-30 13:26:42
-tags:
-categories: Linux
+tags: Linux
 
 ---
 

@@ -1,8 +1,7 @@
 ---
 title: Session
 date: 2017-01-21 23:47:04
-tags:
-categories: Web
+tags: Web
 
 ---
 

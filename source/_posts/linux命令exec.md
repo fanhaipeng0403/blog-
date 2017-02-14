@@ -1,8 +1,7 @@
 ---
 title: linux命令exec
 date: 2017-01-18 09:59:26
-tags:
-categories: Linux
+tags: Linux
 
 ---
 

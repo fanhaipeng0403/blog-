@@ -1,8 +1,7 @@
 ---
 title: Python Web 应用部署
 date: 2017-01-02 17:48:20
-tags:
-categories: Python
+tags: Python
 
 ---
 

@@ -1,10 +1,12 @@
 ---
-title: Python技巧
+title: Python实践
 date: 2016-07-02 12:47:09
-tags:
-categories: Python
+tags: Python
 
 ---
+最佳实践文档
+https://gist.github.com/sloria/7001839
+https://gist.github.com/JeffPaine/6213790
 ```
 1.如何使用PIP更新package？
 
@@ -134,7 +136,7 @@ print index , value
 
 
 
-10.Python中的appen和extend的区别？
+10.Python中的append和extend的区别？
 
 In[7]: x = [1,2,3,4]
 

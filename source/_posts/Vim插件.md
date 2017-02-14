@@ -1,8 +1,7 @@
 ---
 title: Vim使用记录
 date: 2016-12-31 13:51:32
-tags:
-categories: Vim
+tags: Vim
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: API集成
 date: 2016-07-04 09:45:11
-tags:
+tags: Web
 categories: Python
 
 ---

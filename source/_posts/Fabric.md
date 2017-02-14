@@ -1,8 +1,7 @@
 ---
 title: Fabric
 date: 2016-12-29 10:24:22
-tags:
-categories: Deploy
+tags: Deploy
 
 ---
 

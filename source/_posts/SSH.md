@@ -1,8 +1,8 @@
 ---
 title: SSH
 date: 2017-01-10 23:33:16
-tags:
-categories:
+tags: Linux
+
 ---
 
 Linux 下使用 ssh 登录局域网其他电脑的方法

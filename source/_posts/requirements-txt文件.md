@@ -1,7 +1,6 @@
 ---
 title: requirements.txt文件
-tags:
-categories: Python
+tags: Python
 
 ---
 

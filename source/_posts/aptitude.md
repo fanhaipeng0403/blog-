@@ -1,7 +1,7 @@
 ---
 title: Ubuntu(Debian)的aptitude与apt-get的区别和联系
 date: 2016-05-04 12:20:33
-tags:
+tags: Linux
 categories: Linux
 
 ---

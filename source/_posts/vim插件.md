@@ -1,8 +1,7 @@
 ---
 title: vim插件
 date: 2017-01-04 19:39:07
-tags:
-categories: Vim
+tags: Vim
 
 ---
 

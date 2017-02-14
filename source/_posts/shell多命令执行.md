@@ -1,8 +1,7 @@
 ---
 title: shell多命令执行
 date: 2017-01-26 10:51:09
-tags:
-categories: shell
+tags: Shell
 
 ---
 

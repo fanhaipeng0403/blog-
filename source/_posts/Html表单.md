@@ -1,8 +1,7 @@
 ---
 title: Html表单
 date: 2016-12-31 13:41:40
-tags:
-categories: FrontEnd
+tags: FrontEnd
 
 ---
 

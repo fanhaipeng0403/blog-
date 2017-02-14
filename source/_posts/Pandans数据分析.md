@@ -1,8 +1,7 @@
 ---
 title: Pandas数据分析
 date: 2017-01-05 19:45:43
-tags:
-categories: Python
+tags: Python
 
 ---
 

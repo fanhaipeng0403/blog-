@@ -1,8 +1,7 @@
 ---
 title: 数据表示方法之Json和Xml
 date: 2016-06-26 22:33:55
-tags:
-categories: Spider
+tags: Python
 
 ---
 Web Service的行业发展趋势是从XML转向JSON。由于JSON足够简单，能够直接映射到编程语言已有的原生数据结构，JSON的使用让解析与数据抽取变得更简单。但是，XML比JSON在自我描述方面更强，因此在某些应用程序中XML仍然有一定优势。

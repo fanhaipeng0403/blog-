@@ -1,8 +1,7 @@
 ---
 title: node.js
 date: 2017-01-12 16:54:17
-tags:
-categories: node.js
+tags: node.js
 
 ---
 

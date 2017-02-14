@@ -1,8 +1,7 @@
 ---
 title: tar命令
 date: 2016-12-29 15:15:00
-tags:
-categories: Linux
+tags: Linux
 
 ---
 

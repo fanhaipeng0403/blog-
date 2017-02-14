@@ -1,8 +1,7 @@
 ---
 title: Python时间模块
 date: 2017-01-05 23:04:33
-tags:
-categories: Python
+tags: Python
 
 ---
 

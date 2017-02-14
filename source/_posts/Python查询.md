@@ -1,8 +1,7 @@
 ---
 title: Python网站
 date: 2017-01-02 12:12:27
-tags:
-categories: Python
+tags: Python
 
 ---
 

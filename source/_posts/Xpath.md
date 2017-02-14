@@ -1,8 +1,7 @@
 ---
 title: Xpath
 date: 2016-06-17 16:54:29
-tags:
-categories: Python
+tags: Python
 
 ---
 ## 介绍

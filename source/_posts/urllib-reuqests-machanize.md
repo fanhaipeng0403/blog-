@@ -1,8 +1,7 @@
 ---
 title: machanize requests urllib和urllib2 httplib
 date: 2017-01-22 00:18:45
-tags:
-categories: Spider
+tags: Spider
 
 ---
 

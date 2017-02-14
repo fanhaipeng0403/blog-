@@ -1,8 +1,7 @@
 ---
 title: Ubuntu(Debian)的aptitude与apt-get的区别和联系
 date: 2016-05-04 12:20:33
-tags:
-categories: Linux
+tags: Linux
 
 ---
 -----
@@ -115,3 +114,6 @@ func3 ()  {
 但是，第一种写法在有的 bash版本下会报错。
 
 ----------
+deb 安装
+GDebi第三方工具
+------------
