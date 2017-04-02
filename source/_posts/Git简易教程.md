@@ -240,7 +240,10 @@ git reset –soft {{some-start-point-hash}}如果想把之前3次的提交，作
 
 git bisect
 
-##
+
+
+##  一次多处修改,分别提交
+https://www.oschina.net/translate/10-tips-git-next-level?cmp
 
 参考
 http://blog.jobbole.com/96088/

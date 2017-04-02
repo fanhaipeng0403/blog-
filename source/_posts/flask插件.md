@@ -42,3 +42,30 @@ pygments: 代码高亮
 https://github.com/humiaozuzu/awesome-flask
 
 
+
+## 项目快速启动脚本
+
+每个团队都有自己的项目规范，分享平时的开发中经常用到的项目结构，仅供参考。
+
+
+```
+# !/bin/bash
+
+dirname=$1
+
+if [ ! -d "$dirname" ]
+then
+    mkdir ./$dirname && cd $dirname
+    mkdir ./application
+    mkdir -p ./application/{controllers,models,static,static/css,static/js,templates}
+    touch {manage.py,requirements.txt}
+    touch ./application/{__init__.py,app.py,configs.py,extensions.py}
+    touch ./application/{controllers/__init__.py,models/__init__.py}
+    touch ./application/{static/css/style.css,templates/404.html,templates/base.html}
+    echo "File created"
+else
+    echo "File exists"
+fi
+```
+
+

@@ -5,6 +5,13 @@ tags: IDE
 
 ---
 
+
+ctrl+alt+shift+u
+查看数据库表之间的关系
+
+
+----
+
 自定义模板分享
 
 /home/fanhaipeng/.PyCharm2016.3/config/settingsRepository/repository

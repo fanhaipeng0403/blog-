@@ -30,6 +30,8 @@ python setup.py bdist_rpm
 python setup.py bdist_wininst
 ```
 
+<!--more-->
+
 使用者就可以解压缩这个包然后执行 python setup.py install进行安装，然后就可以使用foo、bar这两个模块了
 
 # setuptools/distribute 都扩展了 distutils，提供了更多的功能, 它们是同一个东西。
